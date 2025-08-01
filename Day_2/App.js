@@ -27,6 +27,7 @@ console.log(cpu_count);
 // console.log(process.env);
 
 // ------------------pkdf2(Async way) ------------------
+// best way to use pkdf the async way  as it is non -blocking
 
 const start = performance.now();
 let iterations = 20;
