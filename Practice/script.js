@@ -67,17 +67,43 @@
 //   console.log("-------server is Running-----------");
 // })
 
-const http = require("http");
+// const http = require("http");
 
-const server = http.createServer((req, res) => {
-  const headers = new Headers({ 'Content-Type': 'text/html' });
-  res.setHeaders(headers);
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('ofk');
-}); 
+// const server = http.createServer((req, res) => {
+//   const headers = new Headers({ 'Content-Type': 'text/html' });
+//   res.setHeaders(headers);
+//   res.writeHead(200, { 'Content-Type': 'text/plain' });
+//   res.end('ofk');
+// }); 
+
+// server.listen(3900,()=>{
+//   console.log("----------server Started------------------");
+// })
+
+const http = require('http');
+const fsPromises = require("fs/promises");
+
+const server = http.createServer( async(req,res)=>{
+  console.log(req.url,req.method,new Date());
+ if(req.url=="/"){
+  const data = await fsPromises.readFile("../Day_3/Pages/HomePage.html","utf-8")
+  res.writeHead(200,{'content-type':'text/html'})
+  res.end(data)
+ }
+ else  if(req.url=="/HomePage.js"){
+  const data = await fsPromises.readFile("../Day_3/Pages/HomePage.js","utf-8")
+  res.writeHead(200,{'content-type':'text/javascript'})
+  res.end(data)
+ }
+ else  if(req.url=="/about"){
+  const data = await fsPromises.readFile("../Day_3/Pages/AboutPage.html","utf-8")
+  res.writeHead(200,{'content-type':'text/html'})
+  res.end(data)
+ }
+})
 
 server.listen(3900,()=>{
-  console.log("----------server Started------------------");
+  console.log('-----------Server Started--------')
 })
 
 
