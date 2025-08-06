@@ -170,3 +170,34 @@
 // })
 // //asie hi req.url ko dekh kr hum kafe sare resppose bhenj skte hai
 
+// const http = require('http');
+
+// const server = http.createServer((req,res)=>{
+//     console.log(req.url,req.method);
+//     res.writeHead(200,{'content-type':'text/html'})
+//     res.end("rajat is testing something");
+// })
+
+// server.listen(3400,()=>{
+//     console.log("---------server started---------")
+// })
+// 
+// Now any client(mobile-tab-browser) >>>> request to backend server so the server made by node js 
+// it is hard to handle multiple request by the server as a large number of request will come
+const http = require('http');
+
+const server = http.createServer((req,res)=>{
+
+    res.writeHead(200,{'content-type':'text/json'});
+    res.end(JSON.stringify({
+        isSucess:"true",
+        Status:"server is running fine"
+    }))
+})
+
+server.listen(5400,()=>{
+    console.log("---------server  started----------");
+})
+
+// Now multiple requests are made by client and for each to give response it will be meessy if we will use http to make severs
+// so we will expreess which is build on top of the node js htttp module
