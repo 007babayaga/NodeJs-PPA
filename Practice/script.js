@@ -184,20 +184,72 @@
 // 
 // Now any client(mobile-tab-browser) >>>> request to backend server so the server made by node js 
 // it is hard to handle multiple request by the server as a large number of request will come
-const http = require('http');
+// const http = require('http');
 
-const server = http.createServer((req,res)=>{
+// const server = http.createServer((req,res)=>{
 
-    res.writeHead(200,{'content-type':'text/json'});
-    res.end(JSON.stringify({
+//     res.writeHead(200,{'content-type':'text/json'});
+//     res.end(JSON.stringify({
+//         isSucess:"true",
+//         Status:"server is running fine"
+//     }))
+// })
+
+// server.listen(5400,()=>{
+//     console.log("---------server  started----------");
+// })
+
+// Now multiple requests are made by client and for each to give response it will be meessy if we will use http to make servers
+// so we will expreess ---to make the servers------ which is build on top of the node.js htttp module
+// const figlet = require("figlet");
+
+// figlet("Rajat Pratap", function (err, data) {
+//     if (err) {
+//         console.log("Something went wrong...");
+//         console.dir(err);
+//         return;
+//     }
+//     console.log(data);
+// });
+
+// const http =require('http');
+// const server = http.createServer((req,res)=>{
+//     res.writeHead(200,{'content-type':"text/json"})
+//     res.end(JSON.stringify({
+//         isSucess:"true",
+//         message:"testing the server using basic http module",
+//     }))
+// })
+
+// server.listen(4500,()=>{
+//     console.log("--------server Started-----------------")
+// })
+// ----------------server using express-----------------------(becuae making it with http module was verbose)
+
+// it is an external module so we will have to do a birth certificate first 😂 npm init > npm i exprees>then make the sever
+
+const exprees = require('express');
+
+const app1 = exprees();
+const app2 = exprees()
+
+app1.get("/",(req,res)=>{
+    res.status(201).json({
         isSucess:"true",
-        Status:"server is running fine"
-    }))
+        message:"Server get app1 is fine",
+    })
 })
 
-server.listen(5400,()=>{
-    console.log("---------server  started----------");
+app2.get("/",(req,res)=>{
+    res.status(201).json({
+        isSucess:"true",
+        message:"Server get app2 is fine",
+    })
+})
+app1.listen(4500,()=>{
+    console.log("--------server app1 started----------")
+})
+app2.listen(5400,()=>{
+    console.log("--------server app2 started----------")
 })
 
-// Now multiple requests are made by client and for each to give response it will be meessy if we will use http to make severs
-// so we will expreess which is build on top of the node js htttp module
