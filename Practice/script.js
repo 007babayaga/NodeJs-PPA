@@ -253,22 +253,52 @@
 //     console.log("--------server app2 started----------")
 // })
 
-const exprees = require('express');
+// const exprees = require('express');
 
-const app = exprees();
+// const app = exprees();
 
-app.get('/',(req,res)=>{
-    res.status(201).json({
-        isSuccess:"true",
-        message:"server is running fine"
+// app.get('/',(req,res)=>{
+//     res.status(201).json({
+//         isSuccess:"true",
+//         message:"server is running fine"
+//     })
+// })
+// app.post('/user',(req,res)=>{
+//     res.status(201).json({
+//         isSuccess:"true",
+//         message:"user Created sucessfully"
+//     })
+// })
+// app.listen(4500,()=>{
+//     console.log('----------server started-----------')
+// })
+// we will now use express js to  make our backend server which is made on top of http module it will be easier for us
+// to make backend server using express js
+// since xpress is a external module so we have to install it for installation 
+// 1 .Birth certifictae (npm init)
+// 2.install exprees js
+// 3 .Make the server
+// import chalk from 'chalk';
+const express = require('express');
+
+const app = express();
+app.get('/get',(req,res)=>{
+    res.status(200).json({
+        isSucess:"true",
+        message:"get API is running fine"
     })
 })
-app.post('/user',(req,res)=>{
-    res.status(201).json({
-        isSuccess:"true",
-        message:"user Created sucessfully"
+app.post('/post',(req,res)=>{
+    res.status(200).json({
+        isSucess:"true",
+        message:"post API is running fine"
     })
 })
+
+
 app.listen(4500,()=>{
-    console.log('----------server started-----------')
+    // console.log(chalk.blue('------------Server started-------'))
+    console.log('----server started------')
 })
+
+// console.log(chalk.blue('Hello world!'));
