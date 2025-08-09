@@ -280,10 +280,44 @@
 // 3 .Make the server
 // import chalk from 'chalk';
 
-const express = require('express');
+// const express = require('express');
 
-const app = express();
+// const app = new express();
 
-app.listen(4500,()=>{
-    console.log('------------server started--------')
-})
+// app.get('/profile',(req,res)=>{
+//     res.status(200).json({
+//         success:"true",
+//         message:"profile info fetched successfully"
+//     })
+// })
+
+// app.listen(4500,()=>{
+//     console.log('------------server started--------')
+// })
+// const net = require("net");
+
+// const server = net.createServer((socket) => {
+//     console.log("New client connected");
+
+//     // When server receives data from this client
+//     socket.on("data", (data) => {
+//         console.log(`Client says: ${data}`);
+//         // Send a reply back
+//         socket.write(`You said: ${data}`);
+//     });
+
+//     // Handle client disconnect
+//     socket.on("end", () => {
+//         console.log("Client disconnected");
+//     });
+
+//     // Handle errors
+//     socket.on("error", (err) => {
+//         console.error(`Socket error: ${err}`);
+//     });
+// });
+
+// const PORT = 4000;
+// server.listen(PORT, () => {
+//     console.log(`TCP server is running on port ${PORT}`);
+// });
