@@ -280,3 +280,10 @@
 // 3 .Make the server
 // import chalk from 'chalk';
 
+const express = require('express');
+
+const app = express();
+
+app.listen(4500,()=>{
+    console.log('------------server started--------')
+})
