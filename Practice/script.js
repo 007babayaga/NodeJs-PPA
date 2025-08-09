@@ -279,26 +279,4 @@
 // 2.install exprees js
 // 3 .Make the server
 // import chalk from 'chalk';
-const express = require('express');
 
-const app = express();
-app.get('/get',(req,res)=>{
-    res.status(200).json({
-        isSucess:"true",
-        message:"get API is running fine"
-    })
-})
-app.post('/post',(req,res)=>{
-    res.status(200).json({
-        isSucess:"true",
-        message:"post API is running fine"
-    })
-})
-
-
-app.listen(4500,()=>{
-    // console.log(chalk.blue('------------Server started-------'))
-    console.log('----server started------')
-})
-
-// console.log(chalk.blue('Hello world!'));
