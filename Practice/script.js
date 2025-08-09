@@ -224,7 +224,7 @@
 // // server.listen(4500,()=>{
 // //     console.log("--------server Started-----------------")
 // // })
-// // ----------------server using express-----------------------(becuae making it with http module was verbose)
+// // ----------------server using express-----------------------(because making it with http module was verbose)
 
 // // it is an external module so we will have to do a birth certificate first 😂 npm init > npm i exprees>then make the sever
 
@@ -258,7 +258,6 @@ const exprees = require('express');
 const app = exprees();
 
 app.get('/',(req,res)=>{
-    
     res.status(201).json({
         isSuccess:"true",
         message:"server is running fine"
