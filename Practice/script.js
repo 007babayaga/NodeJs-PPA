@@ -323,4 +323,18 @@
 // });
 // server.js
 
+// const fsPromises = require('fs/promises');
+const express = require('express');
+const app = new express();
+
+app.get('/',(req,res)=>{
+    res.status(201).json({
+        isSuccess:"true",
+        message:"get is working fine"
+    })
+})
+
+app.listen(3000,()=>{
+    console.log('-------server started-------')
+})
 
