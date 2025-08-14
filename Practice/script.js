@@ -324,17 +324,111 @@
 // server.js
 
 // const fsPromises = require('fs/promises');
+// const express = require('express');
+// const app = new express();
+
+// app.get('/',(req,res)=>{
+//     res.status(201).json({
+//         isSuccess:"true",
+//         message:"get is working fine"
+//     })
+// })
+
+// app.listen(3000,()=>{
+//     console.log('-------server started-------')
+// })
+
+// const os = require('os');
+
+// console.log(os.platform());
+// console.log(process.env);
+// const fs = require('fs/promises');
+
+// const data = async()=>{
+//     const res = await fs.readFile("../HTMLbasic/AirbnbNavbar.html","utf-8");
+//     console.log(res);
+// }
+// data();
+
+// const {pbkdf2Sync,pbkdf2}= require('crypto');
+// const{data} = require('./CryptoHelper.js');
+
+// console.log("start");
+// console.log(data)
+// const http = require('http')
+
+// const server = http.createServer((req,res)=>{
+
+//     if(req.method=="GET"){
+//         res.writeHead(200,{'content-type':"text/json"})
+//         res.end(JSON.stringify({
+//             isSucess:"true"
+//         }))
+//     }
+    
+// })
+
+// server.listen(5400,()=>{
+//     console.log("--------------server started---------------")
+// })
+// import chalk from 'chalk';
+
+// const log = console.log;
+
+// log(chalk.blue('Hello') + ' World' + chalk.red('!'));
+// log(chalk.green(
+// 	'I am a green line ' +
+// 	chalk.blue.underline.bold('with a blue substring') +
+// 	' that becomes green again!'
+// ));
+
+// log(chalk.rgb(123, 45, 67).underline('Underlined reddish color'));
+// log(chalk.hex('#DEADED').bold('Bold gray!'));
+// var figlet = require("figlet");
+
+// figlet("Hello World!!", function (err, data) {
+//   if (err) {
+//     console.log("Something went wrong...");
+//     console.dir(err);
+//     return;
+//   }
+//   console.log(data);
+// });
+// import ora from 'ora';
+
+// const spinner = ora('Loading unicorns').start();
+
+// // setTimeout(() => {
+	
+// // }, 1000);
+// spinner.color = 'yellow';
+// 	spinner.text = 'Loading rainbows';
+
+// import gradient from 'gradient-string';
+
+// const express = require('express');
+
+// const app = new express();
+
+// npm init>install them >use them
+// server using express
+
 const express = require('express');
+
 const app = new express();
 
 app.get('/',(req,res)=>{
-    res.status(201).json({
-        isSuccess:"true",
-        message:"get is working fine"
+    res.status(200).json({
+        message:"server (get) is running fine"
+    })
+})
+app.post('/',(req,res)=>{
+    res.status(200).json({
+        message:"server (post) is running fine"
     })
 })
 
-app.listen(3000,()=>{
-    console.log('-------server started-------')
+app.listen(4200,()=>{
+    console.log('------------server started------------')
 })
 

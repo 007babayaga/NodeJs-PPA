@@ -9,7 +9,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "chalk": "^5.5.0",
     "express": "^5.1.0",
+    "figlet": "^1.8.2",
+    "gradient-string": "^3.0.0",
+    "ora": "^8.2.0",
     "ws": "^8.18.3"
   }
 }
